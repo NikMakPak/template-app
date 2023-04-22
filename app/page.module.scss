@@ -1,9 +1,18 @@
+@import 'default_variables';
+.header {
+  background-color: $block-bg-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: $rounding;
+}
 .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+
   min-height: 100vh;
 }
 
