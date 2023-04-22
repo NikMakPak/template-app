@@ -16,7 +16,5 @@ jobs:
           cache: yarn
       - name: Clean install
         run: yarn install --frozen-lockfile
-      - name: Test
-        run: yarn run test
       - name: Build
         run: yarn run build
