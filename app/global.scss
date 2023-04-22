@@ -6,3 +6,15 @@ body {
   margin: 0 10px;
   color: $main-text-color;
 }
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px;
+  transition: transform 0.3s ease-in-out;
+  background-color: $interactive-color;
+  border-radius: $rounding;
+  &:hover {
+    transform: translateY(-10px);
+  }
+}

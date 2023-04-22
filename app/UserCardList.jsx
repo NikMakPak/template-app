@@ -18,8 +18,7 @@ const UserCardList = ({ id }) => {
       {cards.map(el => (
         <li key={el.cardID}>
           <Link href={`/${el.cardID}`}>
-            <h4>{`${el.cardName} - ${el.cardID}`}</h4>
-            <span>{el.totalSum}</span>
+            <h4>{`${el.cardName} - ${el.cardID}: ${el.totalSum}`}</h4>
           </Link>
         </li>
       ))}

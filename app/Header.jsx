@@ -6,7 +6,6 @@ const Header = () => {
     <header>
       <nav>
         <div className={styles.header}>
-          {/*todo: добавить иконку*/}
           <Image
             src={'/vercel.svg'}
             alt={'Logo'}

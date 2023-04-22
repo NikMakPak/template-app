@@ -1,5 +1,6 @@
 import users from '@/json/users.json'
 import cardsExpenses from '@/json/cardsExpenses.json'
+import categories from '@/json/categories.json'
 
 export function getUser(userId) {
   return users.find(u => u.id === Number(userId))
@@ -74,4 +75,31 @@ export function getFinanceGoals(userId) {
   })
 
   return goals
+}
+
+export function getCategoriesSums(userId) {
+  const user = getUser(userId)
+
+  const cardIds = user.cards.map(c => c.id)
+
+  const expenses = cardsExpenses
+    .filter(ce => cardIds.includes(ce.id))
+    .flatMap(ce => ce.expenses)
+
+  const result = []
+
+  categories.forEach(category => {
+    const categoryExpenses = expenses.filter(
+      expense => expense.categoryId === category.id
+    )
+
+    const totalSum = categoryExpenses.reduce(
+      (sum, expense) => sum + expense.sum,
+      0
+    )
+
+    result.push({ categoryName: category.name, totalSum })
+  })
+
+  return result
 }

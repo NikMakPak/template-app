@@ -7,6 +7,12 @@
   padding: 1rem;
   border-radius: $rounding;
 }
+
+.cardInfo {
+  background-color: $block-bg-color;
+  border-radius: $rounding;
+  padding: 5px 10px;
+}
 .main {
   display: flex;
   flex-direction: column;
