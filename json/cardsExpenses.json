@@ -9,6 +9,23 @@
       {
         "categoryId": 2,
         "sum": 1600
+      },
+      {
+        "categoryId": 100,
+        "sum": 1600
+      }
+    ]
+  },
+  {
+    "id": 5678,
+    "expenses": [
+      {
+        "categoryId": 2,
+        "sum": 220
+      },
+      {
+        "categoryId": 100,
+        "sum": 7000
       }
     ]
   }

@@ -6,7 +6,7 @@ export function getUser(userId) {
 }
 
 export function getTotalSum(userId) {
-  let user = getUser(userId)
+  const user = getUser(userId)
   let sum = 0
   user.cards.forEach(card => {
     const cardExpense = cardsExpenses.find(ce => ce.id === Number(card.id))
@@ -21,7 +21,7 @@ export function getTotalSum(userId) {
 }
 
 export function getCards(userId) {
-  let user = getUser(userId)
+  const user = getUser(userId)
   let cards = []
   user.cards.map(card => {
     const cardExpense = cardsExpenses.find(ce => ce.id === card.id)
@@ -35,4 +35,43 @@ export function getCards(userId) {
   })
 
   return cards
+}
+
+export function getFinanceGoals(userId) {
+  const user = getUser(userId)
+  const goals = []
+  user.financeGoals.forEach(financeGoal => {
+    const categoryId = financeGoal.id
+    const goalSum = financeGoal.goalSum
+    const userCards = user.cards
+    const financeGoalExpenses = []
+
+    userCards.forEach(card => {
+      const cardFromCollection = cardsExpenses.find(
+        cardFromCollection => cardFromCollection.id === card.id
+      )
+
+      if (cardFromCollection) {
+        cardFromCollection.expenses.forEach(expense => {
+          if (expense.categoryId === categoryId) {
+            financeGoalExpenses.push(expense.sum)
+          }
+        })
+      }
+    })
+
+    if (financeGoalExpenses.length > 0) {
+      const currGoal = {}
+      const totalSum = financeGoalExpenses.reduce(
+        (sum, current) => sum + current
+      )
+      currGoal.id = categoryId
+      currGoal.name = financeGoal.name
+      currGoal.currSum = totalSum
+      currGoal.goalSum = goalSum
+      goals.push(currGoal)
+    }
+  })
+
+  return goals
 }

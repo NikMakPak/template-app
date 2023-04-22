@@ -15,13 +15,14 @@
     ],
     "financeGoals": [
       {
-        "id": 1,
-        "name": "Ипотека"
+        "id": 100,
+        "name": "Ипотека",
+        "goalSum": 10000
       }
     ]
   },
   {
-    "id": 2000,
+    "id": 1001,
     "password": "",
     "name": "Nikita",
     "cards": [
