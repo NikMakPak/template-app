@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1234,
+    "expenses": [
+      {
+        "categoryId": 1,
+        "sum": 800
+      },
+      {
+        "categoryId": 2,
+        "sum": 1600
+      }
+    ]
+  }
+]

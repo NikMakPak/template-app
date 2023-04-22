@@ -19,5 +19,26 @@
         "name": "Ипотека"
       }
     ]
+  },
+  {
+    "id": 2000,
+    "password": "",
+    "name": "Nikita",
+    "cards": [
+      {
+        "id": 1234,
+        "name": "tinkoff"
+      },
+      {
+        "id": 5678,
+        "name": "sber"
+      }
+    ],
+    "financeGoals": [
+      {
+        "id": 1,
+        "name": "Ипотека"
+      }
+    ]
   }
 ]
